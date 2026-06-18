@@ -117,12 +117,22 @@
 })();
 
 /* ── Contact form ───────────────────── */
-function handleSend(btn){
+function handleSend(event){
+  const form = event.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const status = document.getElementById('formStatus');
+
+  if (!form.checkValidity()) {
+    status.textContent = 'Please complete all fields before sending.';
+    status.className = 'form-status err';
+    form.reportValidity();
+    return false;
+  }
+
   btn.textContent = '⬡  Sending...';
   btn.disabled = true;
-  setTimeout(()=>{
-    btn.textContent = '✓  Message Sent';
-    btn.style.borderColor = 'var(--green)';
-    btn.style.color = 'var(--green)';
-  }, 1400);
+  status.textContent = 'Sending message securely...';
+  status.className = 'form-status';
+
+  return true;
 }
