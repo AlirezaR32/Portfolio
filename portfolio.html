@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYS://PORTFOLIO — Frontend + DevOps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+
+<!-- ═══════════════ BOOT ═══════════════ -->
+<div id="boot">
+  <div id="boot-lines"></div>
+  <div id="boot-prog" style="display:none">
+    <div class="boot-bar-label">// LOADING PORTFOLIO MODULES...</div>
+    <div class="boot-bar-wrap"><div class="boot-bar" id="boot-bar"></div></div>
+    <div class="boot-bar-pct" id="boot-pct">0%</div>
+  </div>
+</div>
+
+<!-- ═══════════════ NAV ════════════════ -->
+<nav>
+  <a class="nav-logo" href="#"><span>//</span> PORTFOLIO</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-pill"><div class="pulse-dot"></div> AVAILABLE FOR HIRE</div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <div class="eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="badge">⚡ SYS_ONLINE</span>
+    &nbsp;v2026.6 — build stable
+  </div>
+
+  <h1 class="hero-name glitch" data-text="YOUR NAME">Alireza</h1>
+
+  <div class="hero-role">
+    <span class="hl">Frontend Engineer</span>
+    <span class="sep">│</span>
+    <span class="hl">DevOps Specialist</span>
+  </div>
+
+  <div class="hero-term">
+    <div><span class="p">➜&nbsp;</span><span class="pa">~/portfolio</span>&nbsp;<span class="cmd">whoami</span></div>
+    <div class="out" style="padding-left:12px; margin-top:4px; font-size:12px;">
+      Developer who ships things that look great <em>and</em> stay up.<br>
+      I live at the intersection of <em>pixel-perfect UI</em><br>
+      and <em>zero-downtime infrastructure</em>.
+    </div>
+    <div style="margin-top:8px"><span class="p">➜&nbsp;</span><span class="cursor-b"></span></div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-g">⬡&nbsp; View Projects</a>
+    <a href="#contact"  class="btn btn-c">⬡&nbsp; Get in Touch</a>
+    <a href="#"         class="btn btn-a">↓&nbsp; Download CV</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">2+</div><div class="stat-label">Years Exp.</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-val">20+</div><div class="stat-label">Projects</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-val">99.9<span style="font-size:.55em">%</span></div><div class="stat-label">Uptime SLA</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-val">∞</div><div class="stat-label">☕ / day</div></div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ═══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="sec-label reveal">
+    <div class="sec-rule"></div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow">// 01 — about</div>
+      <div class="sec-title">SYSTEM_INFO</div>
+    </div>
+  </div>
+
+  <div class="about-grid">
+    <div class="twin reveal">
+      <div class="tbar">
+        <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+        <span class="ttitle">about.json</span>
+      </div>
+      <div class="tbody">
+        <div><span class="p">$&nbsp;</span><span style="color:#fff">cat about.json</span></div>
+        <div style="color:var(--text); padding-left:4px; margin-top:4px; line-height:2.2; font-size:12px;">
+          {<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"name"</span>:&nbsp;<span style="color:var(--cyan)">"Your Name"</span>,<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"role"</span>:&nbsp;<span style="color:var(--cyan)">"Frontend + DevOps Engineer"</span>,<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"location"</span>:&nbsp;<span style="color:var(--cyan)">"Tehran, Iran"</span>,<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"languages"</span>:&nbsp;[<span style="color:var(--cyan)">"Farsi"</span>,&nbsp;<span style="color:var(--cyan)">"English"</span>],<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"passion"</span>:&nbsp;<span style="color:var(--cyan)">"shipping reliable software"</span>,<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"open_to"</span>:&nbsp;[<span style="color:var(--cyan)">"remote"</span>,&nbsp;<span style="color:var(--cyan)">"on-site"</span>],<br>
+          &nbsp;&nbsp;<span style="color:var(--muted)">"available"</span>:&nbsp;<span style="color:var(--green)">true</span><br>
+          }
+        </div>
+        <div style="margin-top:14px"><span class="p">$&nbsp;</span><span style="color:#fff">uptime</span></div>
+        <div style="color:var(--muted); padding-left:4px; font-size:12px;"> 3+ years in production — 0 critical failures</div>
+        <div style="margin-top:10px; font-size:12px; color:var(--muted)"><span class="p">$&nbsp;</span><span style="color:var(--border)"># I automate things so I can automate more things</span></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p style="font-size:13px; color:var(--muted); line-height:2.1; margin-bottom:20px;">
+        مهندس نرم‌افزاری که هم طراحی UI می‌کنه هم مطمئن می‌شه با خیال راحت دیپلوی بشه.
+        از کامپوننت‌سازی تا پایپ‌لاین CI/CD، همه‌جای چرخه توسعه رو می‌پوشونم.
+      </p>
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-key">Status</div><div class="info-val g">● Open to Work</div></div>
+        <div class="info-cell"><div class="info-key">Location</div><div class="info-val">Tehran, IR</div></div>
+        <div class="info-cell"><div class="info-key">Focus</div><div class="info-val c">Frontend + DevOps</div></div>
+        <div class="info-cell"><div class="info-key">Education</div><div class="info-val">Computer Engineering</div></div>
+        <div class="info-cell"><div class="info-key">Experience</div><div class="info-val">3+ Years</div></div>
+        <div class="info-cell"><div class="info-key">Work Mode</div><div class="info-val">Remote / On-site</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ═══════════════ SKILLS ═════════════ -->
+<section id="skills">
+  <div class="sec-label reveal">
+    <div class="sec-rule"></div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow">// 02 — skills</div>
+      <div class="sec-title">TECH_STACK</div>
+    </div>
+  </div>
+
+  <div class="skills-grid">
+    <!-- Frontend -->
+    <div class="twin reveal">
+      <div class="tbar">
+        <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+        <span class="ttitle">frontend.sh</span>
+      </div>
+      <div class="tbody">
+        <div class="skill-section-title">⚛&nbsp;&nbsp;Frontend Development</div>
+
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">React / Next.js</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill g" data-w="90"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">TypeScript</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill g" data-w="12"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Vue.js / Nuxt</span><span class="sk-pct">75%</span></div><div class="sk-track"><div class="sk-fill g" data-w="75"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">CSS / SCSS / Tailwind</span><span class="sk-pct">92%</span></div><div class="sk-track"><div class="sk-fill g" data-w="92"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Webpack / Vite</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill g" data-w="80"></div></div></div>
+
+        <div class="tags">
+          <span class="tag lit">HTML5</span><span class="tag">Redux</span><span class="tag">Zustand</span>
+          <span class="tag">GraphQL</span><span class="tag">REST API</span><span class="tag">Jest</span>
+          <span class="tag">Storybook</span><span class="tag">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DevOps -->
+    <div class="twin reveal">
+      <div class="tbar">
+        <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+        <span class="ttitle">devops.sh</span>
+      </div>
+      <div class="tbody">
+        <div class="skill-section-title c">🐳&nbsp;&nbsp;DevOps & Infrastructure</div>
+
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Docker / Kubernetes</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill c" data-w="88"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">CI/CD — GitHub Actions / Jenkins</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill c" data-w="85"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Linux / Bash Scripting</span><span class="sk-pct">82%</span></div><div class="sk-track"><div class="sk-fill c" data-w="82"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Terraform / IaC</span><span class="sk-pct">72%</span></div><div class="sk-track"><div class="sk-fill c" data-w="72"></div></div></div>
+        <div class="sk-item"><div class="sk-head"><span class="sk-name">Nginx / Caddy / Proxy</span><span class="sk-pct">78%</span></div><div class="sk-track"><div class="sk-fill c" data-w="78"></div></div></div>
+
+        <div class="tags">
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">AWS</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">GitLab CI</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">Prometheus</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">Grafana</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">Redis</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">Ansible</span>
+          <span class="tag" style="border-color:rgba(0,212,255,.2);">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ═══════════════ PROJECTS ════════════ -->
+<section id="projects">
+  <div class="sec-label reveal">
+    <div class="sec-rule"></div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow">// 03 — projects</div>
+      <div class="sec-title">DEPLOYMENTS</div>
+    </div>
+  </div>
+
+  <div class="proj-grid">
+
+    <div class="proj-card reveal">
+      <div class="proj-id">PROJECT_001</div>
+      <div class="proj-name">DeployKit Dashboard</div>
+      <div class="proj-desc">Real-time deployment monitor integrated with Kubernetes API — pod health, rollout status, and live log streaming in the browser.</div>
+      <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">K8s API</span><span class="proj-tag">WebSocket</span><span class="proj-tag">Docker</span></div>
+      <div class="proj-links"><a class="proj-link" href="#">⬢ Live Demo</a><a class="proj-link" href="#">⌥ GitHub</a></div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-id">PROJECT_002</div>
+      <div class="proj-name">Pipeline Builder</div>
+      <div class="proj-desc">Visual drag-and-drop CI/CD editor that generates GitHub Actions or GitLab CI YAML. Cuts pipeline setup from hours to minutes.</div>
+      <div class="proj-tags"><span class="proj-tag">Vue.js</span><span class="proj-tag">Node.js</span><span class="proj-tag">GitHub Actions</span><span class="proj-tag">YAML</span></div>
+      <div class="proj-links"><a class="proj-link" href="#">⬢ Live Demo</a><a class="proj-link" href="#">⌥ GitHub</a></div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-id">PROJECT_003</div>
+      <div class="proj-name">InfraWatch</div>
+      <div class="proj-desc">Lightweight monitoring agent + React dashboard. Shows CPU, memory and disk metrics with webhook alerting. Self-hostable via Docker Compose.</div>
+      <div class="proj-tags"><span class="proj-tag">Next.js</span><span class="proj-tag">Prometheus</span><span class="proj-tag">Grafana</span><span class="proj-tag">Docker</span></div>
+      <div class="proj-links"><a class="proj-link" href="#">⬢ Live Demo</a><a class="proj-link" href="#">⌥ GitHub</a></div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-id">PROJECT_004</div>
+      <div class="proj-name">FormForge</div>
+      <div class="proj-desc">Open-source form builder — drag-and-drop UI, conditional logic, zero third-party trackers. Self-hosted data collection.</div>
+      <div class="proj-tags"><span class="proj-tag">React</span><span class="proj-tag">TypeScript</span><span class="proj-tag">Tailwind</span><span class="proj-tag">PostgreSQL</span></div>
+      <div class="proj-links"><a class="proj-link" href="#">⬢ Live Demo</a><a class="proj-link" href="#">⌥ GitHub</a></div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-id">PROJECT_005</div>
+      <div class="proj-name">TerraBlocks</div>
+      <div class="proj-desc">Visual Terraform module composer. Drag infrastructure blocks, connect dependencies, export production-ready .tf configs.</div>
+      <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Terraform</span><span class="proj-tag">AWS</span><span class="proj-tag">D3.js</span></div>
+      <div class="proj-links"><a class="proj-link" href="#">⬢ Live Demo</a><a class="proj-link" href="#">⌥ GitHub</a></div>
+    </div>
+
+    <div class="proj-card reveal" style="border-color:rgba(255,184,0,.2)">
+      <div class="proj-id" style="color:var(--amber)">OPEN_SOURCE</div>
+      <div class="proj-name" style="color:var(--amber)">Contributions</div>
+      <div class="proj-desc">Active contributor on GitHub. PRs merged into Vite core, react-query docs, and various DevOps tooling repositories.</div>
+      <div class="proj-tags">
+        <span class="proj-tag" style="color:var(--amber);border-color:rgba(255,184,0,.3);background:rgba(255,184,0,.07)">Open Source</span>
+        <span class="proj-tag" style="color:var(--amber);border-color:rgba(255,184,0,.3);background:rgba(255,184,0,.07)">Community</span>
+      </div>
+      <div class="proj-links"><a class="proj-link" style="color:var(--amber)" href="#">⌥ GitHub Profile</a></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ═══════════════ EXPERIENCE ═════════ -->
+<section id="experience">
+  <div class="sec-label reveal">
+    <div class="sec-rule"></div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow">// 04 — experience</div>
+      <div class="sec-title">GIT_LOG</div>
+    </div>
+  </div>
+
+  <!-- git log visualization -->
+  <div class="twin reveal" style="margin-bottom:48px;">
+    <div class="tbar">
+      <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+      <span class="ttitle">git log --oneline --graph --color</span>
+    </div>
+    <div class="tbody" style="font-size:12px; color:var(--muted); line-height:2.3;">
+      <div><span style="color:var(--amber)">* a3f9c1e</span>&nbsp;<span style="color:var(--green)">(HEAD → main)</span>&nbsp;feat: Senior Frontend + DevOps @ Company C</div>
+      <div><span style="color:var(--amber)">| * d72b8f2</span>&nbsp;refactor: led UI architecture overhaul</div>
+      <div><span style="color:var(--amber)">|/</span></div>
+      <div><span style="color:var(--amber)">* 1e4a9c3</span>&nbsp;feat: built prod k8s cluster @ Company B</div>
+      <div><span style="color:var(--amber)">* 8b23d01</span>&nbsp;feat: first DevOps role — CI/CD, Docker, Linux</div>
+      <div><span style="color:var(--amber)">* f003ab7</span>&nbsp;init: frontend developer internship</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-hash"><span>a3f9c1e</span>&nbsp;2023 — Present</div>
+      <div class="exp-role">Senior Frontend + DevOps Engineer</div>
+      <div class="exp-co">Company Name &nbsp;·&nbsp; Full-time</div>
+      <ul class="exp-duties">
+        <li>Architected React micro-frontend system serving 50k+ daily active users</li>
+        <li>Built end-to-end CI/CD pipelines with GitHub Actions — deployment time cut by 60%</li>
+        <li>Managed production Kubernetes cluster across 3 environments, maintaining 99.9% uptime</li>
+        <li>Led frontend guild of 4 engineers; introduced TypeScript and a shared design system</li>
+      </ul>
+    </div>
+
+    <div class="exp-item reveal" style="--dot-color:var(--cyan)">
+      <div class="exp-hash"><span>1e4a9c3</span>&nbsp;2022 — 2023</div>
+      <div class="exp-role">DevOps / Frontend Developer</div>
+      <div class="exp-co">Company Name &nbsp;·&nbsp; Full-time</div>
+      <ul class="exp-duties">
+        <li>Containerized legacy monolith into 12 Docker microservices</li>
+        <li>Built real-time ops dashboard in Vue.js + WebSocket for the SRE team</li>
+        <li>Automated server provisioning with Ansible across 20 VMs</li>
+      </ul>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-hash"><span>f003ab7</span>&nbsp;2021 — 2022</div>
+      <div class="exp-role">Frontend Developer</div>
+      <div class="exp-co">Company Name &nbsp;·&nbsp; Internship → Full-time</div>
+      <ul class="exp-duties">
+        <li>Shipped 8 product features in React + Redux for a B2B SaaS platform</li>
+        <li>Maintained 80%+ unit test coverage, introduced Storybook to the team</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="gline"></div>
+
+<!-- ═══════════════ CONTACT ═════════════ -->
+<section id="contact" style="padding-bottom: 140px;">
+  <div class="sec-label reveal">
+    <div class="sec-rule"></div>
+    <div class="sec-meta">
+      <div class="sec-eyebrow">// 05 — contact</div>
+      <div class="sec-title">ESTABLISH_CONNECTION</div>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+    <div class="reveal">
+      <p class="contact-desc">
+        دنبال یه فرصت جدید هستم یا می‌خوای روی یه پروژه جالب همکاری کنیم؟<br>
+        <span style="color:var(--green)">پیام بده — معمولاً ظرف ۲۴ ساعت جواب می‌دم.</span>
+      </p>
+      <div class="contact-links">
+        <a class="clink" href="mailto:you@example.com">
+          <div class="clink-icon">✉</div>
+          <div class="clink-info"><div class="clink-label">Email</div><div class="clink-val">you@example.com</div></div>
+        </a>
+        <a class="clink" href="#">
+          <div class="clink-icon" style="font-weight:700;font-size:14px">in</div>
+          <div class="clink-info"><div class="clink-label">LinkedIn</div><div class="clink-val">linkedin.com/in/yourname</div></div>
+        </a>
+        <a class="clink" href="#">
+          <div class="clink-icon">⌥</div>
+          <div class="clink-info"><div class="clink-label">GitHub</div><div class="clink-val">github.com/yourname</div></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="twin reveal">
+      <div class="tbar">
+        <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+        <span class="ttitle">send_message.sh</span>
+      </div>
+      <div class="tbody">
+        <div style="margin-bottom:18px; font-size:11px; color:var(--muted)">
+          <span class="p">$ </span>./connect --new-session
+        </div>
+        <div class="form-wrap">
+          <div class="form-field">
+            <label class="form-label">// NAME</label>
+            <input class="form-input" type="text" placeholder="your_name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">// EMAIL</label>
+            <input class="form-input" type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">// MESSAGE</label>
+            <textarea class="form-input" placeholder="Hello, I'd like to..."></textarea>
+          </div>
+          <button class="btn btn-g" style="align-self:flex-start" onclick="handleSend(this)">⬡&nbsp; Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═════════════ -->
+<footer>
+  <div class="footer-text">
+    <span>$&nbsp;</span>echo&nbsp;<span>"Built with ❤ + ☕ &nbsp;—&nbsp; YOUR NAME © 2026"</span>
+  </div>
+  <div class="footer-text">
+    <span style="color:var(--green)">●</span>&nbsp; v2026.6 — All systems operational
+  </div>
+</footer>
+
+<!-- ══════════════ SCRIPTS ═════════════ -->
+<script src="script.js"></script>
+</body>
+</html>
