@@ -83,15 +83,18 @@
 })();
 
 /* ── Scroll Reveal ──────────────────── */
-(function(){
+window.initReveal = function(){
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
   },{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-})();
+  document.querySelectorAll('.reveal:not(.vis)').forEach(el=>obs.observe(el));
+};
+window.initReveal();
 
 /* ── Skill Bars ─────────────────────── */
-(function(){
+// Exposed on window so content-loader.js can re-run this after it
+// injects fresh skill bars fetched from /api/content.
+window.initSkillBars = function(){
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -100,8 +103,9 @@
       }
     });
   },{threshold:.3});
-  document.querySelectorAll('.sk-fill').forEach(b=>obs.observe(b));
-})();
+  document.querySelectorAll('.sk-fill').forEach(b=>{ b.style.width = '0%'; obs.observe(b); });
+};
+window.initSkillBars();
 
 /* ── Nav active highlight ───────────── */
 (function(){

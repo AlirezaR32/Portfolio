@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>ADMIN://PORTFOLIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/admin.css">
+</head>
+<body>
+
+<!-- ═══════════════ LOGIN ═══════════════ -->
+<div id="loginScreen">
+  <div class="twin login-box">
+    <div class="tbar">
+      <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
+      <span class="ttitle">auth.sh</span>
+    </div>
+    <div class="tbody">
+      <div class="login-title">// RESTRICTED_ACCESS</div>
+      <div class="login-sub">$ sudo ./admin --login</div>
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginPassword">ADMIN_SECRET</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••••" required />
+        </div>
+        <button class="btn btn-g" type="submit" style="margin-top:16px; width:100%; justify-content:center;">⬡&nbsp; Authenticate</button>
+        <div class="login-error" id="loginError"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ADMIN APP ═══════════ -->
+<div id="adminApp">
+  <header class="admin-header">
+    <div class="admin-title">
+      <a class="nav-logo" href="index.html"><span>//</span> PORTFOLIO</a>
+      <span style="color:var(--muted); font-size:11px;">/ admin</span>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-panel="panelStats">Stats</button>
+      <button class="admin-tab" data-panel="panelContent">Content</button>
+    </div>
+    <div class="admin-actions">
+      <a class="btn btn-c" href="index.html" target="_blank" style="padding:9px 16px; font-size:10px;">⬡ View Site</a>
+      <button class="btn-mini danger" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- ── STATS PANEL ─────────────────── -->
+    <section class="admin-panel active" id="panelStats">
+      <div class="panel-title">// VISITOR_ANALYTICS</div>
+
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-card-label">Total Visits</div><div class="stat-card-val" id="statTotal">—</div></div>
+        <div class="stat-card"><div class="stat-card-label">Last 30 Days</div><div class="stat-card-val c" id="stat30d">—</div></div>
+        <div class="stat-card"><div class="stat-card-label">Unique Visitors</div><div class="stat-card-val" id="statUnique">—</div></div>
+        <div class="stat-card"><div class="stat-card-label">Top Country</div><div class="stat-card-val c" id="statTopCountry" style="font-size:16px;">—</div></div>
+      </div>
+
+      <div class="twin">
+        <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">visits_per_day.sh — last 30 days</span></div>
+        <div class="tbody">
+          <div class="barchart" id="barchart"></div>
+          <div class="barchart-caption"><span id="chartStart"></span><span id="chartEnd"></span></div>
+        </div>
+      </div>
+
+      <div class="breakdown-grid">
+        <div class="twin">
+          <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">by_country.sh</span></div>
+          <div class="tbody" id="bkCountry"></div>
+        </div>
+        <div class="twin">
+          <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">by_city.sh</span></div>
+          <div class="tbody" id="bkCity"></div>
+        </div>
+        <div class="twin">
+          <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">by_device.sh</span></div>
+          <div class="tbody" id="bkModel"></div>
+        </div>
+        <div class="twin">
+          <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">by_language.sh</span></div>
+          <div class="tbody" id="bkLanguage"></div>
+        </div>
+      </div>
+
+      <div class="twin" style="margin-top:20px;">
+        <div class="tbar"><div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div><span class="ttitle">recent_visits.sh — last 50</span></div>
+        <div class="table-wrap">
+          <table class="data-table" id="recentTable">
+            <thead><tr><th>Time</th><th>Country</th><th>City</th><th>Device</th><th>Screen</th><th>Lang</th><th>Page</th></tr></thead>
+            <tbody id="recentBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTENT PANEL ───────────────── -->
+    <section class="admin-panel" id="panelContent">
+      <div class="panel-title">// EDIT_SITE_CONTENT</div>
+
+      <!-- About -->
+      <div class="editor-section">
+        <div class="editor-section-title">about.json</div>
+        <div class="editor-row">
+          <div class="field"><label>Name</label><input id="fName" /></div>
+          <div class="field"><label>Headline (under name)</label><input id="fHeadline" /></div>
+        </div>
+        <div class="editor-row">
+          <div class="field"><label>Focus (short tag)</label><input id="fFocus" /></div>
+          <div class="field"><label>Experience (e.g. "2+")</label><input id="fExpYears" /></div>
+        </div>
+        <div class="editor-row">
+          <div class="field"><label>Location</label><input id="fLocation" /></div>
+          <div class="field"><label>Education</label><input id="fEducation" /></div>
+        </div>
+        <div class="editor-row">
+          <div class="field"><label>Languages (comma separated)</label><input id="fLanguages" /></div>
+          <div class="field"><label>Open to (comma separated)</label><input id="fOpenTo" /></div>
+        </div>
+        <div class="editor-row">
+          <div class="field"><label>Passion line</label><input id="fPassion" /></div>
+          <div class="field field-checkbox" style="align-self:end; padding-bottom:10px;">
+            <input id="fAvailable" type="checkbox" />
+            <label style="margin:0;" for="fAvailable">Available for work</label>
+          </div>
+        </div>
+        <div class="editor-row single">
+          <div class="field"><label>Bio (Persian, supports line breaks)</label><textarea id="fBio"></textarea></div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="editor-section">
+        <div class="editor-section-title">
+          frontend.sh
+          <button class="btn-mini add" data-add-skill="frontend">+ Add skill</button>
+        </div>
+        <div id="skillsFrontendList"></div>
+      </div>
+      <div class="editor-section">
+        <div class="editor-section-title">
+          backend.sh
+          <button class="btn-mini add" data-add-skill="backend">+ Add skill</button>
+        </div>
+        <div id="skillsBackendList"></div>
+      </div>
+      <div class="editor-section">
+        <div class="editor-section-title">
+          devops.sh
+          <button class="btn-mini add" data-add-skill="devops">+ Add skill</button>
+        </div>
+        <div id="skillsDevopsList"></div>
+      </div>
+
+      <!-- Experience -->
+      <div class="editor-section">
+        <div class="editor-section-title">
+          git_log.sh — experience
+          <button class="btn-mini add" id="addExpBtn">+ Add entry</button>
+        </div>
+        <div id="experienceList"></div>
+      </div>
+
+      <!-- Contact -->
+      <div class="editor-section">
+        <div class="editor-section-title">contact</div>
+        <div class="editor-row">
+          <div class="field"><label>Email</label><input id="fEmail" /></div>
+          <div class="field"><label>LinkedIn URL</label><input id="fLinkedin" /></div>
+        </div>
+        <div class="editor-row single">
+          <div class="field"><label>GitHub URL</label><input id="fGithub" /></div>
+        </div>
+      </div>
+
+      <div class="save-bar">
+        <button class="btn btn-g" id="saveBtn">⬡&nbsp; Save Changes</button>
+        <span class="save-status" id="saveStatus"></span>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

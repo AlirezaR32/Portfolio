@@ -6,7 +6,7 @@
   <title>SYS://PORTFOLIO — Frontend + DevOps</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
@@ -46,10 +46,10 @@
     &nbsp;v2026.6 — build stable
   </div>
 
-  <h1 class="hero-name glitch" data-text="Alireza Rafie">Alireza Rafie</h1>
+  <h1 class="hero-name glitch" id="heroName" data-text="Alireza Rafie">Alireza Rafie</h1>
 
   <div class="hero-role">
-    <span class="hl">Frontend Developer</span>
+    <span class="hl" id="heroRoleText">Frontend Developer</span>
   </div>
 
   <div class="hero-term">
@@ -71,7 +71,7 @@
   </div>
 
   <div class="hero-stats">
-    <div class="stat"><div class="stat-val">2+</div><div class="stat-label">Years Exp.</div></div>
+    <div class="stat"><div class="stat-val" id="statYears">2+</div><div class="stat-label">Years Exp.</div></div>
     <div class="stat-sep"></div>
     <div class="stat"><div class="stat-val">20+</div><div class="stat-label">Projects</div></div>
     <div class="stat-sep"></div>
@@ -99,7 +99,7 @@
         <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
         <span class="ttitle">about.json</span>
       </div>
-      <div class="tbody">
+      <div class="tbody" id="aboutTbody">
         <div><span class="p">$&nbsp;</span><span style="color:#fff">cat about.json</span></div>
         <div style="color:var(--text); padding-left:4px; margin-top:4px; line-height:2.2; font-size:12px;">
           {<br>
@@ -120,11 +120,11 @@
     </div>
 
     <div class="reveal">
-      <p style="font-size:13px; color:var(--muted); line-height:2.1; margin-bottom:20px;">
-        مهندس نرم‌افزاری که هم طراحی UI می‌کنه هم مطمئن می‌شه با خیال راحت دیپلوی بشه.
+      <p style="font-size:13px; color:var(--muted); line-height:2.1; margin-bottom:20px;" id="aboutBio">
+        مهندس نرم‌افزاری که هم طراحی UI می‌کنه هم مطمئن می‌شه با خیال راحت دیپلوی بشه.<br>
         از کامپوننت‌سازی تا پایپ‌لاین CI/CD، همه‌جای چرخه توسعه رو می‌پوشونم.
       </p>
-      <div class="info-grid">
+      <div class="info-grid" id="infoGrid">
         <div class="info-cell"><div class="info-key">Status</div><div class="info-val g">● Open to Work</div></div>
         <div class="info-cell"><div class="info-key">Location</div><div class="info-val">Yazd, IR</div></div>
         <div class="info-cell"><div class="info-key">Focus</div><div class="info-val c">Web</div></div>
@@ -156,7 +156,7 @@
       <span class="ttitle">frontend.sh</span>
     </div>
 
-    <div class="tbody">
+    <div class="tbody" id="tbodyFrontend">
       <div class="skill-section-title">⚛ Frontend Development</div>
 
       <div class="sk-item">
@@ -193,7 +193,7 @@
       <span class="ttitle">backend.sh</span>
     </div>
 
-    <div class="tbody">
+    <div class="tbody" id="tbodyBackend">
       <div class="skill-section-title">⚙ Backend Development</div>
 
       <div class="sk-item">
@@ -225,7 +225,7 @@
       <span class="ttitle">devops.sh</span>
     </div>
 
-    <div class="tbody">
+    <div class="tbody" id="tbodyDevops">
       <div class="skill-section-title">🐳 DevOps & Tools</div>
 
       <div class="sk-item">
@@ -285,51 +285,12 @@
       <div class="td td-r"></div><div class="td td-y"></div><div class="td td-g"></div>
       <span class="ttitle">git log --oneline --graph --color</span>
     </div>
-    <div class="tbody" style="font-size:12px; color:var(--muted); line-height:2.3;">
-      <div><span style="color:var(--amber)">* a3f9c1e</span>&nbsp;<span style="color:var(--green)">(HEAD → main)</span>&nbsp;feat: Senior Frontend + DevOps @ Company C</div>
-      <div><span style="color:var(--amber)">| * d72b8f2</span>&nbsp;refactor: led UI architecture overhaul</div>
-      <div><span style="color:var(--amber)">|/</span></div>
-      <div><span style="color:var(--amber)">* 1e4a9c3</span>&nbsp;feat: built prod k8s cluster @ Company B</div>
-      <div><span style="color:var(--amber)">* 8b23d01</span>&nbsp;feat: first DevOps role — CI/CD, Docker, Linux</div>
-      <div><span style="color:var(--amber)">* f003ab7</span>&nbsp;init: frontend developer internship</div>
+    <div class="tbody" id="gitlogTbody" style="font-size:12px; color:var(--muted); line-height:2.3;">
+      <div>// no commits yet — add experience from the admin panel</div>
     </div>
   </div>
 
-  <div class="timeline">
-
-    <div class="exp-item reveal">
-      <div class="exp-hash"><span>a3f9c1e</span>&nbsp;2023 — Present</div>
-      <div class="exp-role">Senior Frontend + DevOps Engineer</div>
-      <div class="exp-co">Company Name &nbsp;·&nbsp; Full-time</div>
-      <ul class="exp-duties">
-        <li>Architected React micro-frontend system serving 50k+ daily active users</li>
-        <li>Built end-to-end CI/CD pipelines with GitHub Actions — deployment time cut by 60%</li>
-        <li>Managed production Kubernetes cluster across 3 environments, maintaining 99.9% uptime</li>
-        <li>Led frontend guild of 4 engineers; introduced TypeScript and a shared design system</li>
-      </ul>
-    </div>
-
-    <div class="exp-item reveal" style="--dot-color:var(--cyan)">
-      <div class="exp-hash"><span>1e4a9c3</span>&nbsp;2022 — 2023</div>
-      <div class="exp-role">DevOps / Frontend Developer</div>
-      <div class="exp-co">Company Name &nbsp;·&nbsp; Full-time</div>
-      <ul class="exp-duties">
-        <li>Containerized legacy monolith into 12 Docker microservices</li>
-        <li>Built real-time ops dashboard in Vue.js + WebSocket for the SRE team</li>
-        <li>Automated server provisioning with Ansible across 20 VMs</li>
-      </ul>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-hash"><span>f003ab7</span>&nbsp;2021 — 2022</div>
-      <div class="exp-role">Frontend Developer</div>
-      <div class="exp-co">Company Name &nbsp;·&nbsp; Internship → Full-time</div>
-      <ul class="exp-duties">
-        <li>Shipped 8 product features in React + Redux for a B2B SaaS platform</li>
-        <li>Maintained 80%+ unit test coverage, introduced Storybook to the team</li>
-      </ul>
-    </div>
-
+  <div class="timeline" id="timelineContainer">
   </div>
 </section>
 
@@ -352,15 +313,15 @@
         <span style="color:var(--green)">پیام بده — معمولاً ظرف ۲۴ ساعت جواب می‌دم.</span>
       </p>
       <div class="contact-links">
-        <a class="clink" href="mailto:alireza.rafie.dev@proton.me">
+        <a class="clink" id="contactEmailLink" href="mailto:alireza.rafie.dev@proton.me">
           <div class="clink-icon">✉</div>
           <div class="clink-info"><div class="clink-label">Email</div><div class="clink-val">alireza.rafie.dev@proton.me</div></div>
         </a>
-        <a class="clink" href="https://www.linkedin.com/in/AlirezaR32" target="_blank" rel="noreferrer">
+        <a class="clink" id="contactLinkedinLink" href="https://www.linkedin.com/in/AlirezaR32" target="_blank" rel="noreferrer">
           <div class="clink-icon" style="font-weight:700;font-size:14px">in</div>
           <div class="clink-info"><div class="clink-label">LinkedIn</div><div class="clink-val">linkedin.com/in/AlirezaR32</div></div>
         </a>
-        <a class="clink" href="https://github.com/AlirezaR32" target="_blank" rel="noreferrer">
+        <a class="clink" id="contactGithubLink" href="https://github.com/AlirezaR32" target="_blank" rel="noreferrer">
           <div class="clink-icon">⌥</div>
           <div class="clink-info"><div class="clink-label">GitHub</div><div class="clink-val">github.com/AlirezaR32</div></div>
         </a>
@@ -419,5 +380,7 @@
 <!-- ══════════════ SCRIPTS ═════════════ -->
 <script src="github.js"></script>
 <script src="script.js"></script>
+<script src="content-loader.js"></script>
+<script src="track.js"></script>
 </body>
 </html>
